@@ -31,7 +31,7 @@ class MadLibsActivity : AppCompatActivity() {
             var inputAsString = resources.openRawResource(R.raw.madlib).bufferedReader().use { it.readText() }
             //var inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
 
-
+//version 3
            inputAsString = inputAsString.replace("<adjective>", "${datos!!.getString("palabra1")}")
             inputAsString= inputAsString.replace("<plural-noun>", "${datos!!.getString("palabra2")}")
             inputAsString = inputAsString.replace("<noun>","${datos!!.getString("palabra3")}")
