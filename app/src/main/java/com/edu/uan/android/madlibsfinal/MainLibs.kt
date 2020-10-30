@@ -29,21 +29,24 @@ class MainLibs : AppCompatActivity() {
         btn_continuar.setOnClickListener {
 
             contador++
-
+            txt_cambio_palabra.setText("Ingresa un adjetivo")
             if (contador == 1) {
                 palabra1 = edti_ingresrTexto.text.toString()
                 edti_ingresrTexto.setText("")
 
-            }
 
+            }
+            txt_cambio_palabra.setText("Ingresa un sustantivo plural")
             if (contador == 2) {
                 palabra2 = edti_ingresrTexto.text.toString()
                 edti_ingresrTexto.setText("")
+
 
             }
             if (contador == 3) {
                 palabra3 = edti_ingresrTexto.text.toString()
                 edti_ingresrTexto.setText("")
+                txt_cambio_palabra.setText("sustantivo")
 
             }
             if (contador == 4) {

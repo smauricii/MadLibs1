@@ -1,33 +1,61 @@
 package com.edu.uan.android.madlibsfinal
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_m_ad_libs.*
+import java.io.BufferedReader
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileReader
 
 class MadLibsActivity : AppCompatActivity() {
-    var datos:Bundle? = null
+    var datos: Bundle? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_m_ad_libs)
 
         datos = intent.extras
-        var palabra1:String = datos!!.getString("palabra1","palabra1")
-        var palabra2:String = datos!!.getString("palabra2","palabra1")
-        var palabra3:String = datos!!.getString("palabra3","palabra1")
-        var palabra4:String = datos!!.getString("palabra4","palabra1")
-        var palabra5:String = datos!!.getString("palabra5","palabra1")
-        var palabra6:String = datos!!.getString("palabra6","palabra1")
-        var palabra7:String = datos!!.getString("palabra7","palabra1")
-        var palabra8:String = datos!!.getString("palabra8","palabra1")
-        var palabra9:String = datos!!.getString("palabra9","palabra1")
-        var palabra10:String = datos!!.getString("palabra10","palabra1")
-        var palabra11:String = datos!!.getString("palabra11","palabra1")
-        var palabra12:String = datos!!.getString("palabra12","palabra1")
-        var palabra13:String = datos!!.getString("palabra13","palabra1")
 
 
 
-        txt_madlib.setText("One of the most <$palabra1> characters in fiction is named Tarzan of the <$palabra2> .Tarzan was raised by a/an<$palabra3> and lives in the <$palabra4> jungle in the heart of darkest <$palabra5> . He spends most of his time eating <$palabra6> and swinging from tree to <$palabra7> . Whenever he gets angry, he beats on his chest and says, <$palabra8> ! This is his war cry. Tarzan always dresses in<$palabra9> shorts made from the skin of a/an <$palabra10> and his best friend is a/an <$palabra11> chimpanzee named Cheetah. He is supposed to be able to speak to elephants and <$palabra12> . In the movies, Tarzan is played by <$palabra13> ."
-        )
+        readList()
+        // readList1()
     }
+
+    fun readList() {
+
+        val file: File
+        file = getFileStreamPath("madlib.txt")
+
+        if (file.exists()) {
+            var inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
+
+
+            inputAsString = inputAsString.replace("<adjective>", "${datos!!.getString("palabra1")}")
+            inputAsString= inputAsString.replace("<plural-noun>", "${datos!!.getString("palabra2")}")
+            inputAsString = inputAsString.replace("<noun>","${datos!!.getString("palabra3")}")
+            inputAsString = inputAsString.replace("<adjective1>","${datos!!.getString("palabra4")}")
+            inputAsString = inputAsString.replace("<place>","${datos!!.getString("palabra5")}")
+            inputAsString = inputAsString.replace("<plural-noun1>","${datos!!.getString("palabra6")}")
+            inputAsString= inputAsString.replace("<noun1>","${datos!!.getString("palabra7")}")
+            inputAsString = inputAsString.replace("<funny-noise>","${datos!!.getString("palabra8")}")
+            inputAsString = inputAsString.replace("<adjective2>","${datos!!.getString("palabra9")}")
+            inputAsString= inputAsString.replace("<noun2>","${datos!!.getString("palabra10")}")
+            inputAsString = inputAsString.replace("<adjective3>","${datos!!.getString("palabra11")}")
+            inputAsString = inputAsString.replace("<plural-noun1>","${datos!!.getString("palabra12")}")
+            inputAsString = inputAsString.replace("<person's-name>","${datos!!.getString("palabra13")}")
+            txt_madlib.text = inputAsString
+
+
+        } else {
+            android.widget.Toast.makeText(
+                this,
+                "No hay lista para ver",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    }
+
+
 }
