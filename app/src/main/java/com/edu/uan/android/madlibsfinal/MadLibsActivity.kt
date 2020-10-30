@@ -28,10 +28,11 @@ class MadLibsActivity : AppCompatActivity() {
         file = getFileStreamPath("madlib.txt")
 
         if (file.exists()) {
-            var inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
+            var inputAsString = resources.openRawResource(R.raw.madlib).bufferedReader().use { it.readText() }
+            //var inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
 
 
-            inputAsString = inputAsString.replace("<adjective>", "${datos!!.getString("palabra1")}")
+           inputAsString = inputAsString.replace("<adjective>", "${datos!!.getString("palabra1")}")
             inputAsString= inputAsString.replace("<plural-noun>", "${datos!!.getString("palabra2")}")
             inputAsString = inputAsString.replace("<noun>","${datos!!.getString("palabra3")}")
             inputAsString = inputAsString.replace("<adjective1>","${datos!!.getString("palabra4")}")
