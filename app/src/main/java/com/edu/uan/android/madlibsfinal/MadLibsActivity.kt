@@ -24,37 +24,27 @@ class MadLibsActivity : AppCompatActivity() {
 
     fun readList() {
 
-        val file: File
-        file = getFileStreamPath("madlib.txt")
 
-        if (file.exists()) {
-            var inputAsString = resources.openRawResource(R.raw.madlib).bufferedReader().use { it.readText() }
-            //var inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
+        var inputAsString =
+            resources.openRawResource(R.raw.madlib).bufferedReader().use { it.readText() }
+        //var inputAsString = FileInputStream(file).bufferedReader().use { it.readText() }
 
-//version 3
-           inputAsString = inputAsString.replace("<adjective>", "${datos!!.getString("palabra1")}")
-            inputAsString= inputAsString.replace("<plural-noun>", "${datos!!.getString("palabra2")}")
-            inputAsString = inputAsString.replace("<noun>","${datos!!.getString("palabra3")}")
-            inputAsString = inputAsString.replace("<adjective1>","${datos!!.getString("palabra4")}")
-            inputAsString = inputAsString.replace("<place>","${datos!!.getString("palabra5")}")
-            inputAsString = inputAsString.replace("<plural-noun1>","${datos!!.getString("palabra6")}")
-            inputAsString= inputAsString.replace("<noun1>","${datos!!.getString("palabra7")}")
-            inputAsString = inputAsString.replace("<funny-noise>","${datos!!.getString("palabra8")}")
-            inputAsString = inputAsString.replace("<adjective2>","${datos!!.getString("palabra9")}")
-            inputAsString= inputAsString.replace("<noun2>","${datos!!.getString("palabra10")}")
-            inputAsString = inputAsString.replace("<adjective3>","${datos!!.getString("palabra11")}")
-            inputAsString = inputAsString.replace("<plural-noun1>","${datos!!.getString("palabra12")}")
-            inputAsString = inputAsString.replace("<person's-name>","${datos!!.getString("palabra13")}")
-            txt_madlib.text = inputAsString
+//version Final
+        inputAsString = inputAsString.replace("<adjective>", "${datos!!.getString("palabra1")}")
+        inputAsString = inputAsString.replace("<plural-noun>", "${datos!!.getString("palabra2")}")
+        inputAsString = inputAsString.replace("<noun>", "${datos!!.getString("palabra3")}")
+        inputAsString = inputAsString.replace("<adjective1>", "${datos!!.getString("palabra4")}")
+        inputAsString = inputAsString.replace("<place>", "${datos!!.getString("palabra5")}")
+        inputAsString = inputAsString.replace("<plural-noun1>", "${datos!!.getString("palabra6")}")
+        inputAsString = inputAsString.replace("<noun1>", "${datos!!.getString("palabra7")}")
+        inputAsString = inputAsString.replace("<funny-noise>", "${datos!!.getString("palabra8")}")
+        inputAsString = inputAsString.replace("<adjective2>", "${datos!!.getString("palabra9")}")
+        inputAsString = inputAsString.replace("<noun2>", "${datos!!.getString("palabra10")}")
+        inputAsString = inputAsString.replace("<adjective3>", "${datos!!.getString("palabra11")}")
+        inputAsString = inputAsString.replace("<plural-noun1>", "${datos!!.getString("palabra12")}")
+        inputAsString = inputAsString.replace("<person's-name>", "${datos!!.getString("palabra13")}")
+        txt_madlib.text = inputAsString
 
-
-        } else {
-            android.widget.Toast.makeText(
-                this,
-                "No hay lista para ver",
-                android.widget.Toast.LENGTH_SHORT
-            ).show()
-        }
 
     }
 

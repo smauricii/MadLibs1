@@ -1,11 +1,11 @@
-One of the most <adjective> characters in fiction is named
-"Tarzan of the <plural-noun> ." Tarzan was raised by a/an
-<noun> and lives in the <adjective1> jungle in the
-heart of darkest <place> . He spends most of his time
-eating <plural-noun1> and swinging from tree to <noun1> .
-Whenever he gets angry, he beats on his chest and says,
-" <funny-noise> !" This is his war cry. Tarzan always dresses in
-<adjective2> shorts made from the skin of a/an <noun2>
-and his best friend is a/an <adjective3> chimpanzee named
-Cheetah. He is supposed to be able to speak to elephants and
-<plural-noun1> . In the movies, Tarzan is played by <person's-name> .
+Uno de los personajes más <adjective> de la ficción se llama
+"Tarzán del <plural-noun>". Tarzán fue criado por un / an
+<noun> y vive en la jungla <adjective1> en el
+corazón del <place> más oscuro. Pasa la mayor parte de su tiempo
+comiendo <plural-noun1> y balanceándose de un árbol a <noun1>.
+Siempre que se enoja, se golpea el pecho y dice:
+"<funny-noise>!" Este es su grito de guerra. Tarzán siempre se viste de
+<adjective2> pantalones cortos hechos con la piel de un/unos <noun2>
+y su mejor amigo es un chimpancé <adjective3> llamado
+Leopardo. Se supone que puede hablar con los elefantes y
+<plural-noun1>. En las películas, Tarzán es interpretado por <person's-name>.

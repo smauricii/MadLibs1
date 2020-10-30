@@ -10,7 +10,7 @@ class InicialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicial)
 
-        text_mad.setText("Mad Libs es un juego de palabras de plantilla de frases que consiste en un jugador que pide a otros una lista de palabras para sustituir los espacios en blanco en una historia antes de leer en voz alta.")
+        text_mad.setText("Mad Libs es un juego de palabras de plantilla de frases que consiste en un jugador que pide a otros una lista de palabras para sustituir los espacios en blanco en una historia antes de leer en voz alta, ingresa las palabras que se van solicitando en la siguiente pantalla, oprime el boton comenzar.")
 
         btn_comenzar.setOnClickListener {
             val intent = Intent(this, MainLibs::class.java)
